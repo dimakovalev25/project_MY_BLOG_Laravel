@@ -8,6 +8,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-    return 'bbb';
+        return view('main.index');
+
     }
 }
