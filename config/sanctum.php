@@ -10,7 +10,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Requests from the following domains / hosts will receive stateful API
-    | authentication cookies. Typically, these should include your local
+    | authentication cookies. Typically, these should includes your local
     | and production domains which access your API via a frontend SPA.
     |
     */
@@ -60,8 +60,8 @@ return [
     */
 
     'middleware' => [
-        'verify_csrf_token' => App\Http\Middleware\VerifyCsrfToken::class,
-        'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
+        'verify_csrf_token' => \App\Http\Controllers\Middleware\VerifyCsrfToken::class,
+        'encrypt_cookies' => \App\Http\Controllers\Middleware\EncryptCookies::class,
     ],
 
 ];
