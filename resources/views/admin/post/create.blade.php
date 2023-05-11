@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
+
     <div class="content-wrapper">
 
         <!-- Main content -->
@@ -8,43 +8,64 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <form method="POST" action="{{route('admin.post.store')}}">
+                    <form method="POST" action="{{route('admin.post.store')}}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="form-group">
 
-                            <label for="">New post</label>
-                            <br/>
-
-                            <input name="title" class="mt-3" type="text" placeholder="Post title">
-                            <br/>
-                            @error('title')
+                            <label class="mt-3" for="">Title post</label>
+                            <div class="form-group mt-3">
+                                <input name="title" type="text" placeholder="Post title">
+                                <br/>
+                                @error('title')
                                 <div class="text-danger">{{$message}}</div>
-                            @enderror
+                                @enderror
 
-                            <input name="content" class="mt-3" type="text" placeholder="Post content">
-                            <br/>
-                            @error('content')
-                            <div class="text-danger">{{$message}}</div>
-                            @enderror
+                            </div>
 
-                            <input name="category_id" class="mt-3" type="number" placeholder="Category">
-                            <br/>
-                            @error('category_id')
-                            <div class="text-danger">{{$message}}</div>
-                            @enderror
+                            <div class="form-group">
+                                <label for="exampleInputFile">Preview image</label>
+                                <div class="input-group">
+                                    <div class="custom-fil">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile"
+                                               name="preview_image">
+                                        <label class="custom-file-label" for="exampleInputFile">Choose image
+                                            file</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        {{--                                        <span class="input-group-text">Upload</span>--}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="">Content post</label>
+
+                                <textarea id="summernote" name="content"></textarea>
+                                @error('content')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
 
 
+                            <div class="form-group">
+                                <label>Categories post</label>
+                                <select class="form-control" name="category_id">
+                                    @foreach($categories as $category)
+                                        {{$category->id == old('category_id') ? 'selected' : ''}}
+                                        <option value="{{$category->id}}">{{$category->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
 
-                            <input type="submit" class="btn btn-primary mt-3" value="Create">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary mt-3" value="Create">
+                            </div>
+
                         </div>
-
                     </form>
-
                 </div>
             </div>
-
         </section>
     </div>
 
