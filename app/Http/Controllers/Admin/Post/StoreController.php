@@ -11,14 +11,31 @@ class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
-        $data = $request->validated();
+        try {
+
+            $data = $request->validated();
+            $tagIds = $data['tag_ids'];
+            unset($data['tag_ids']);
+
+            //переопр картинки
+//        dd($data);
 //        $previewImage = $data['preview_image'];
 //        $previewImagePath = Storage::put('/images', $previewImage);
 
-        //переопределение файла картинки
-        $data['preview_image'] = Storage::put('/images', $data['preview_image']);
+            //переопределение файла картинки
+            $data['preview_image'] = Storage::put('/images', $data['preview_image']);
 
-        Post::firstOrCreate($data);
+            $post = Post::firstOrCreate($data);
+
+            //ложим тэги отдельно
+            $post->tags()->attach($tagIds);
+
+        } catch (\Exception $exception){
+            abort(404);
+        }
+
+
+
         return redirect()->route('admin.post.index');
 
     }

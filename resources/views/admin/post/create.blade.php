@@ -59,6 +59,18 @@
 
 
                             <div class="form-group">
+                                <div class="form-group">
+                                    <label>Choose tags</label>
+                                    <select name="tag_ids[]" class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                                        @foreach($tags as $tag)
+                                            <option value="{{$tag->id}}">{{$tag->title}}</option>
+
+                                        @endforeach
+                                    </select>
+                            </div>
+
+
+                            <div class="form-group">
                                 <input type="submit" class="btn btn-primary mt-3" value="Create">
                             </div>
 
