@@ -4,7 +4,7 @@
     <div class="content-wrapper">
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content mt-4">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
