@@ -25,11 +25,13 @@
                             @error('email')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
-                            <input class="form-control" name="password" class="mt-3" type="text" placeholder="User password">
-                            <br/>
-                            @error('password')
-                                <div class="text-danger">{{$message}}</div>
-                            @enderror
+
+
+{{--                            <input class="form-control" name="password" class="mt-3" type="text" placeholder="User password">--}}
+{{--                            <br/>--}}
+{{--                            @error('password')--}}
+{{--                                <div class="text-danger">{{$message}}</div>--}}
+{{--                            @enderror--}}
 
 
 {{--                            <div class="form-group">--}}
