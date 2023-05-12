@@ -1,6 +1,16 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+
+    <li class="nav-item">
+        <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <input type="submit" value="EXIT" class="btn btn-outline-danger ml-3">
+        </form>
+    </li>
+
+
+
     <a href="{{route('blog.index')}}" class="brand-link ml-3">
 {{--        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">--}}
         <p>MY Blog</p>

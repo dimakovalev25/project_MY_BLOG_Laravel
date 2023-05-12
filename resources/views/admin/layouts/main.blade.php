@@ -30,6 +30,7 @@
 
     @yield('content')
 
+
     <footer class="main-footer">
         <strong>My Blog</strong>
         All rights reserved.
