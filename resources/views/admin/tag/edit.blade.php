@@ -16,7 +16,7 @@
 
                             <label for="">Update tag</label>
                             <br/>
-                            <input value="{{$tag->title}}" name="title" class="mt-3" type="text" placeholder=" New tag name">
+                            <input class="form-control" value="{{$tag->title}}" name="title" class="mt-3" type="text" placeholder=" New tag name">
                             <br/>
 
                             @error('title')

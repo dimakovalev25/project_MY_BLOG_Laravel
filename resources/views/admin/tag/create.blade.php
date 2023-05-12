@@ -16,7 +16,7 @@
                             <label for="">New tag</label>
                             <br/>
 
-                            <input name="title" class="mt-3" type="text" placeholder="Tag name">
+                            <input class="form-control" name="title" class="mt-3" type="text" placeholder="Tag name">
                             <br/>
 
                             @error('title')

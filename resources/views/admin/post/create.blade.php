@@ -14,7 +14,7 @@
 
                             <label class="mt-3" for="">Title post</label>
                             <div class="form-group mt-3">
-                                <input name="title" type="text" placeholder="Post title">
+                                <input class="form-control" name="title" type="text" placeholder="Post title">
                                 <br/>
                                 @error('title')
                                 <div class="text-danger">{{$message}}</div>
@@ -40,7 +40,7 @@
                             <div class="form-group mt-3">
                                 <label for="">Content post</label>
 
-                                <textarea id="summernote" name="content"></textarea>
+                                <textarea class="form-control" id="summernote" name="content"></textarea>
                                 @error('content')
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror

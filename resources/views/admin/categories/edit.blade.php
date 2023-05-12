@@ -16,13 +16,13 @@
 
                             <label for="">Change category</label>
                             <br/>
-                            <input value="{{$category->title}}" name="title" class="mt-3" type="text" placeholder="Category name">
+                            <input class="form-control" value="{{$category->title}}" name="title" class="mt-3" type="text" placeholder="Category name">
                             <br/>
 
                             @error('title')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
-                            <input type="submit" class="btn btn-primary mt-3" value="Update">
+                            <input class="form-control" type="submit" class="btn btn-primary mt-3" value="Update">
                         </div>
                     </form>
                 </div>

@@ -10,7 +10,8 @@ class CreateController extends Controller
     public function __invoke()
     {
         $users = User::all();
-        return view('admin.user.create', compact('users'));
+        $roles = User::getRoles();
+        return view('admin.user.create', compact('users', 'roles'));
 
     }
 }
