@@ -9,21 +9,6 @@
         </form>
     </li>
 
-
-
-    <a href="{{route('blog.index')}}" class="brand-link ml-3">
-{{--        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">--}}
-        <p>MY Blog</p>
-
-    </a>
-
-    <a href="{{route('admin.index')}}" class="brand-link ml-3">
-        {{--        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">--}}
-{{--        <span class="brand-text font-weight-light">Admin panel</span>--}}
-        <p>Admin panel</p>
-
-    </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
 
@@ -32,6 +17,24 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
 
+
+            <li class="nav-item mt-2">
+                <a href="{{route('blog.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-blog"></i>
+                    <p>
+                        Blog
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item mt-2">
+                <a href="{{route('admin.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                        Admin panel
+                    </p>
+                </a>
+            </li>
 
             <li class="nav-item mt-2">
                 <a href="{{route('admin.user.index')}}" class="nav-link">

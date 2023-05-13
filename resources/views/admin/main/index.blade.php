@@ -8,64 +8,63 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                <div class="row">
+                <div class="row  mt-3">
+
+
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-info">
+                        <div class="small-box bg-info h-100">
                             <div class="inner">
-                                <h3>150</h3>
-
-                                <p>New Orders</p>
+                                <h3>Users</h3>
+                                <p>{{$data['$usersCount']}}</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-bag"></i>
+                                <i class="fas fa-users"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success h-100">
+                            <div class="inner">
+                                <h3>Posts</h3>
+                                <p>{{$data['$postsCount']}}</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-book"></i>
+                            </div>
                         </div>
                     </div>
                     <!-- ./col -->
+
+
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-success">
+                        <div class="small-box bg-danger h-100">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                <p>Bounce Rate</p>
+                                <h3>Categories</h3>
+                                <p>{{$data['$categoriesCount']}}</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
+                                <i class="fas fa-th-list"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
+
+
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-warning">
+                        <div class="small-box bg-danger h-100">
                             <div class="inner">
-                                <h3>44</h3>
-
-                                <p>User Registrations</p>
+                                <h3>Tags</h3>
+                                <p>{{$data['$tagsCount']}}</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                                <i class="fas fa-tags"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>65</h3>
-
-                                <p>Unique Visitors</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

@@ -15,7 +15,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', IndexController::class)->name('admin.index');
+
     });
+
 
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
         Route::get('/', IndexController::class)->name('admin.category.index');
@@ -62,6 +64,25 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 
 });
+
+Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => [ 'auth', 'admin']],
+    function () {
+
+        Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+            Route::get('/', IndexController::class)->name('personal.main.index');
+        });
+
+        Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
+            Route::get('/', IndexController::class)->name('personal.liked.index');
+            Route::delete('/{post}', DeleteController::class)->name('personal.liked.delete');
+        });
+
+        Route::group(['namespace' => 'Comment' , 'prefix' => 'comment'], function () {
+            Route::get('/', IndexController::class)->name('personal.comment.index');
+        });
+
+
+    });
 
 
 Auth::routes(['verify' => true]);
