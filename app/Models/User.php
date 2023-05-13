@@ -27,6 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
             self::ROLE_READER => 'Reader',
         ];
     }
+
     protected $fillable = [
         'name',
         'email',
@@ -40,13 +41,21 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function sendEmailVerificationNotification()
     {
         $this->notify(new SendVerifyWithQueueNotification());
 
     }
-    public function likedPosts ()
+
+    public function likedPosts()
     {
-        return $this->belongsToMany(Post::class,'post_user_likes', 'user_id', '');
+        return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', '');
+    }
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
     }
 }

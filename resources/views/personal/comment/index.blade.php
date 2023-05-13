@@ -11,15 +11,59 @@
                 <div class="row  mt-3">
 
 
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger h-100">
-                            <div class="inner">
-                                <h3>Comments</h3>
-                                <p>10</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-comment"></i>
+                    <div class="col-10">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Post title</th>
+                                        <th>Post content</th>
+                                        <th>Show post</th>
+                                        <th>Update comment</th>
+                                        <th>Delete comment</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    @foreach($comments as $comment)
+
+                                        <tr>
+                                            <td>{{$comment->id}}</td>
+                                            <td>
+                                                <a href="{{route('admin.post.show', $comment->id)}}">{{$comment->message}}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('admin.post.show', $comment->id)}}">{{$comment->message}}</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('admin.post.show', $comment->id)}}"><i
+                                                        class="far fa-eye"></i></a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('personal.comment.edit', $comment->id)}}"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                            </td>
+                                            <td>
+                                                <form method="POST"
+                                                      action="{{route('personal.comment.delete', $comment->id)}}">
+                                                    <button class="border-0 bg-white" type="submit">
+                                                        <i class="fas fa-trash text-danger" role="button">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+                                    @endforeach
+
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
