@@ -20,7 +20,7 @@
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{{route('blog.index')}}"><img src="assets/blog1.png" alt="Blog"></a>
+            <a class="navbar-brand" href="{{route('blog.index')}}"><img src="{{asset('assets/blog1.png') }}" alt="Blog"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,16 +28,16 @@
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">My Blog<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('blog.index')}}">My Blog<span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">My Contacts</a>
+                        <a class="nav-link"  href="{{route('blog.index')}}">My Contacts</a>
                     </li>
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">My Projects</a>
+                        <a class="nav-link"  href="{{route('blog.index')}}">My Projects</a>
                     </li>
 
                     <li class="nav-item">
@@ -52,25 +52,13 @@
 
 @yield('content')
 
-{{--<section class="edica-footer-banner-section">--}}
-{{--    <div class="container">--}}
-{{--        <div class="footer-banner" data-aos="fade-up">--}}
-{{--            <h1 class="banner-title">Download it now.</h1>--}}
-{{--            <div class="banner-btns-wrapper">--}}
-{{--                <button class="btn btn-success"> <img src="assets/images/apple@1x.svg" alt="ios" class="mr-2"> App Store</button>--}}
-{{--                <button class="btn btn-success"> <img src="assets/images/android@1x.svg" alt="android" class="mr-2"> Google Play</button>--}}
-{{--            </div>--}}
-{{--            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
 
 <footer class="edica-footer" data-aos="fade-up">
     <div class="container">
         <div class="row footer-widget-area">
             <div class="col-md-3">
                 <a href="index.html" class="footer-brand-wrapper">
-                    <img src="assets/blog1.png" alt="blog logo">
+                    <img src="{{asset('assets/blog1.png')}}" alt="blog logo">
                 </a>
                 <p class="contact-details">d.nozdryn@gmail.com</p>
                 <p class="contact-details">+(37529)86-77-824</p>
