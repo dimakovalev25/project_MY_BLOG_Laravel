@@ -7,6 +7,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', IndexController::class)->name('blog.index');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], function () {
+    Route::get('/', IndexController::class)->name('post.index');
+    Route::get('/{post}', ShowController::class)->name('post.show');
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
