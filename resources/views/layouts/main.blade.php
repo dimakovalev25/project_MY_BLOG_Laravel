@@ -21,28 +21,39 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="{{route('blog.index')}}"><img src="{{asset('assets/blog1.png') }}" alt="Blog"></a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="edicaMainNav">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('blog.index')}}">My Blog<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('blog.index')}}">Blog<span
+                                class="sr-only">(current)</span></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link"  href="{{route('blog.index')}}">My Contacts</a>
-                    </li>
+                    {{--                    <li class="nav-item">
+                                            <a class="nav-link"  href="{{route('blog.index')}}">My Contacts</a>
+                                        </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link"  href="{{route('blog.index')}}">My Projects</a>
-                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link"  href="{{route('blog.index')}}">My Projects</a>
+                                        </li>--}}
+                    @auth()
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.index')}}">Admin panel</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">Admin panel</a>
-                    </li>
+                    @endauth
+                    @guest()
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.index')}}">Register</a>
+                        </li>
+
+                    @endguest
+
 
                 </ul>
             </div>
@@ -97,7 +108,9 @@
                 <a href="#!">Terms</a>
                 <a href="#!">Site Map</a>
             </nav>
-            <p class="mb-0">© My Blog. 2023 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights reserved.</p>
+            <p class="mb-0">© My Blog. 2023 <a href="https://www.bootstrapdash.com" target="_blank"
+                                               rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All
+                rights reserved.</p>
         </div>
     </div>
 </footer>

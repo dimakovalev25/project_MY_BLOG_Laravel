@@ -20,28 +20,28 @@
                 </div>
             </section>
 
-
-            <section class="comment-list">
-                @foreach($post->comments as $comment)
-                    <div class="card-footer card-comments pb-5">
-                        <div class="card-comment">
-                            <div class="comment-text">
+            @auth()
+                <section class="comment-list">
+                    @foreach($post->comments as $comment)
+                        <div class="card-footer card-comments pb-5">
+                            <div class="card-comment">
+                                <div class="comment-text">
                     <span class="username">
                         <h5>
                       {{$comment->user->name}}
 
-                            @dd($comment->DateAsCarbon)
+                            {{--                            @dd($comment->DateAsCarbon)--}}
                         </h5>
-                      <span class="text-muted float-right">{{$comment->created_at}}</span>
+{{--                      <span class="text-muted float-right">{{$comment->created_at}}</span>--}}
+                      <span class="text-muted float-right">{{$comment->DateAsCarbon->diffForHumans()}}</span>
                     </span>
-                                {{$comment->message}}
+                                    {{$comment->message}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </section>
 
-
-            </section>
 
             <section class="comment-section">
                 <h2 class="section-title" data-aos="fade-up">Add comment</h2>
@@ -63,7 +63,7 @@
                     </div>
                 </form>
             </section>
-
+            @endauth
 
         </div>
     </main>
